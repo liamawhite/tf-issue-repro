@@ -31,7 +31,7 @@ func TestAccServiceAccountResource(t *testing.T) {
 	initial := `
 provider "provider" {}
 
-provider_service_account "some-name" {}
+resource provider_service_account "some-name" {}
 	`
 	resource.Test(t, resource.TestCase{
 		ProtoV6ProviderFactories: AccProtoV6ProviderFactories,
