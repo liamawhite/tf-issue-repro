@@ -28,7 +28,7 @@ func NewResource() resource.Resource {
 type ServiceAccountResource struct{}
 
 func (r *ServiceAccountResource) Metadata(_ context.Context, req resource.MetadataRequest, resp *resource.MetadataResponse) {
-	resp.TypeName = req.ProviderTypeName + "_serviceaccount"
+	resp.TypeName = req.ProviderTypeName + "_service_account"
 }
 
 func (r *ServiceAccountResource) Configure(_ context.Context, req resource.ConfigureRequest, resp *resource.ConfigureResponse) {
@@ -42,7 +42,6 @@ func (*ServiceAccountResource) Schema(_ context.Context, _ resource.SchemaReques
 	resp.Schema = schema.Schema{Attributes: map[string]schema.Attribute{
 		"id": schema.StringAttribute{
 			Computed:      true,
-			Description:   "Fully-qualified name of the ServiceAccount resource.",
 			PlanModifiers: []planmodifier.String{stringplanmodifier.UseStateForUnknown()},
 		},
 		"keys": schema.ListNestedAttribute{

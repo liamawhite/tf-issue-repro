@@ -23,7 +23,7 @@ import (
 )
 
 var AccProtoV6ProviderFactories = map[string]func() (tfprotov6.ProviderServer, error){
-	"tsb": providerserver.NewProtocol6WithError(New("test")()),
+	"provider": providerserver.NewProtocol6WithError(New("test")()),
 }
 
 func TestAccServiceAccountResource(t *testing.T) {
